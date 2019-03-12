@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>生命不息梦想不止</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-03-10T05:47:30.449Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>AcrossanyWhere</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pythyon</title>
+    <link href="http://yoursite.com/passages/pythyon/"/>
+    <id>http://yoursite.com/passages/pythyon/</id>
+    <published>2019-03-10T05:46:19.000Z</published>
+    <updated>2019-03-10T05:47:30.449Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;This is first
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Python基础语法</title>
+    <link href="http://yoursite.com/passages/test/"/>
+    <id>http://yoursite.com/passages/test/</id>
+    <published>2019-03-10T05:46:19.000Z</published>
+    <updated>2019-03-11T12:48:26.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;This is first title&lt;/p&gt;
+&lt;h1 id=&quot;Python基础语法&quot;&gt;&lt;a href=&quot;#Python基础语法&quot; class=&quot;headerlink&quot; title=&quot;Python基础语法&quot;&gt;&lt;/a&gt;Python基础语法&lt;/h1&gt;&lt;p&gt;一句hello
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/passages/hello-world/"/>
+    <id>http://yoursite.com/passages/hello-world/</id>
+    <published>2019-03-09T14:23:06.170Z</published>
+    <updated>2019-03-09T14:23:06.170Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
