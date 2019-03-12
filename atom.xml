@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-10T05:47:30.449Z</updated>
+  <updated>2019-03-12T03:33:49.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>pythyon</title>
-    <link href="http://yoursite.com/passages/pythyon/"/>
-    <id>http://yoursite.com/passages/pythyon/</id>
+    <title>Python基础语法学习笔记</title>
+    <link href="http://yoursite.com/passages/Python%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/passages/Python基础学习笔记/</id>
     <published>2019-03-10T05:46:19.000Z</published>
-    <updated>2019-03-10T05:47:30.449Z</updated>
+    <updated>2019-03-12T03:33:49.000Z</updated>
     
     <summary type="html">
     
@@ -29,35 +29,14 @@
       
         
         
-          &lt;p&gt;This is first
+          &lt;h1 id=&quot;Python基础语法&quot;&gt;&lt;a href=&quot;#Python基础语法&quot; class=&quot;headerlink&quot; title=&quot;Python基础语法&quot;&gt;&lt;/a&gt;Python基础语法&lt;/h1&gt;&lt;p&gt;一句hello World 引出Python3&lt;br&gt;&lt;figure
         
       
     
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>Python基础语法</title>
-    <link href="http://yoursite.com/passages/test/"/>
-    <id>http://yoursite.com/passages/test/</id>
-    <published>2019-03-10T05:46:19.000Z</published>
-    <updated>2019-03-11T12:48:26.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;This is first title&lt;/p&gt;
-&lt;h1 id=&quot;Python基础语法&quot;&gt;&lt;a href=&quot;#Python基础语法&quot; class=&quot;headerlink&quot; title=&quot;Python基础语法&quot;&gt;&lt;/a&gt;Python基础语法&lt;/h1&gt;&lt;p&gt;一句hello
-        
-      
-    
-    </summary>
-    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
