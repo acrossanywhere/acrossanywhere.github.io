@@ -11,7 +11,7 @@
     
     
     
-    <meta name="keywords" content="Life, ARIA, Hexo">
+    <meta name="keywords" content="Life, ARIA, Hexo, 生命不息梦想不止">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -174,6 +174,178 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Python中使用函数/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="AcrossanyWhere">
+        <meta itemprop="description" content>
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="生命不息梦想不止">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/passages/Python中使用函数/" itemprop="url">Python中使用函数</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-14T00:19:04+08:00">2019-03-14 00:19:04</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。你已经知道Python提供了许多内建函数，<br>比如print()。但你也可以自己创建函数，这被叫做用户自定义函数</p>
+<p>你可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
+<pre><code>函数代码块以 def 关键词开头，后接函数标识符名称和圆括号()。
+任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于定义参数。
+函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。
+函数内容以冒号起始，并且缩进。
+return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None。
+</code></pre><ul>
+<li><p>函数的返回值</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">def fun1(a):<br>     a+=1<br>     return a #这里返回a+1的结果<br>print(fun1(5))<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>默认参数</p>
+</li>
+</ul>
+<figure class="hljs highlight plain"><figcaption><span>show1(a1,a2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs def">    print(a1,a2,a3)<br>show1(11, 22)#只传递两个参数，默认参数a3也会打印<br>show1(111,22,333)#给默认参数传递新值，这样会修改默认参数值<br></code></pre></td></tr></table></figure>
+<ul>
+<li><p>指定参数</p>
+<figure class="hljs highlight plain"><figcaption><span>show2(a1,a2):#默认传参数按顺序来</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs def">    print(a1,a2)<br>show2(999,123)#不指定参数<br>show2(a2=999,a1=123)#指定参数<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>动态参数</p>
+</li>
+</ul>
+<p>1 <em>args 用来将参数打包成tuple给函数体调用，参数个数不受限制，</em>args接收元组作为位置参数<br>2 <em>args 将参数打包成字典<br>3 注意点：参数arg、</em>args、<strong>kwargs三个参数的位置必须是一定的。必须是(arg,*args,</strong>kwargs)<br>这个顺序，否则程序会报错</p>
+<p><em>args 用来将参数打包成tuple给函数体调用，参数个数不受限制，</em>args接收元组作为位置参数<br><figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#将参数打包成元组</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show1</span><span class="hljs-params">(*args)</span>:</span><br>    print(args,type(args))<br>show1(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br><br><span class="hljs-comment">#args 将参数打包成字典</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show2</span><span class="hljs-params">(**args)</span>:</span><br>    print(args,type(args))<br>show2(a=<span class="hljs-number">123</span>,b=<span class="hljs-number">456</span>,c=<span class="hljs-number">789</span>)<br></code></pre></td></tr></table></figure></p>
+<pre><code>结果:
+    (1, 2, 3) &lt;class &apos;tuple&apos;&gt;
+    {&apos;a&apos;: 123, &apos;b&apos;: 456, &apos;c&apos;: 789} &lt;class &apos;dict&apos;&gt;
+</code></pre><ul>
+<li><p>匿名函数:<br>  当我们在传入函数时，有些时候，不需要显式地定义函数，直接传入匿名函数更方便。<br>  关键字lambda表示匿名函数<br>  匿名函数有个限制，就是只能有一个表达式，不用写return，返回值就是该表达式的结果。</p>
+<p>  用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是<br>  一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数</p>
+</li>
+</ul>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#普通函数<br>def fun1(a):<br>    a+=1<br>    return a<br>print(fun1(5))<br><br>#lambda表达式 实现相同的效果<br><br>fun2=lambda  a: a+1 #这里a相当于形参，冒号前面是函数体，冒号后面是函数执行的代码<br><br>print(fun2(5))<br></code></pre></td></tr></table></figure>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/函数/" rel="tag"><i class="fas fa-tags"></i>函数</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Python可命名元组/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="AcrossanyWhere">
+        <meta itemprop="description" content>
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="生命不息梦想不止">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/passages/Python可命名元组/" itemprop="url">Python可命名元祖</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-12T23:54:17+08:00">2019-03-12 23:54:17</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>直接上代码吧</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><br>import  collections<br>#可命名元组，即给元组的元素起名字。用名称去访问元组中的元素<br>MytupleCalss=collections.namedtuple(&quot;MytupleCalss&quot;,[&apos;x&apos;,&apos;y&apos;,&apos;z&apos;])<br><br>obj=MytupleCalss(11,22,33)<br>print(obj.x,obj.y,obj.z)<br></code></pre></td></tr></table></figure>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/python/" rel="tag"><i class="fas fa-tags"></i>python</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/python深浅拷贝/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="AcrossanyWhere">
+        <meta itemprop="description" content>
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="生命不息梦想不止">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/passages/python深浅拷贝/" itemprop="url">python深浅拷贝</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-12T23:04:40+08:00">2019-03-12 23:04:40</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>Python当中对于拷贝，分为两种类型。一种是数字和字符串，另一种就是列表、元组、字典等其他类型了</p>
+<p>对于字符串，和数字,来说，深拷贝和浅拷贝永远都是用的同一个内存中的值，它们指向的地址是相同的</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python">n1=&#123;<span class="hljs-string">"k1"</span>:<span class="hljs-string">"1"</span>,<span class="hljs-string">"k2"</span>:<span class="hljs-number">123</span>,<span class="hljs-string">"k3"</span>:[<span class="hljs-string">"len"</span>,<span class="hljs-number">444</span>]&#125;<br>n2=n1<span class="hljs-comment">#将n1赋值给n2</span><br><span class="hljs-keyword">if</span> (id(n1))==(id(n2)):<br>    print(<span class="hljs-string">"n1的地址和n2相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n1的地址和n2不同"</span>)<br><br>n3=copy.copy(n1)<span class="hljs-comment">#浅拷贝创建新对象。对象只拷原来对象第一层的数据</span><br><span class="hljs-keyword">if</span> (id(n3))==(id(n1)):<br>    print(<span class="hljs-string">"n1和n3地址相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n1和n3地址不同"</span>)<br>print(n1,<span class="hljs-string">'\n'</span>,n3) <span class="hljs-comment">#n3 和n1 是两个不同的对象。ID不一样,但指向的值是一样的</span><br><span class="hljs-keyword">if</span> (id(n1[<span class="hljs-string">"k3"</span>]))==(id(n3[<span class="hljs-string">"k3"</span>])): <span class="hljs-comment">#测试一下n1和n3指向的数据地址是否一致</span><br>    print(<span class="hljs-string">"n1的k3和n3的k3 指向的地址相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n1的k3和n3的k3 指向的地址不同"</span>)<br><br>n4=copy.deepcopy(n1)<br><span class="hljs-keyword">if</span> (id(n4))==(id(n1)): <span class="hljs-comment">#无论嵌套多少层，深拷贝会完整复制一份新的数据。</span><br>    print(<span class="hljs-string">"n4和n1地址相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n4和n1地址不同"</span>)<br><br><span class="hljs-keyword">if</span> (id(n1[<span class="hljs-string">"k3"</span>]))==(id(n4[<span class="hljs-string">"k3"</span>])): <span class="hljs-comment">#测试一下n1和n4指向的数据地址是否一致</span><br>    print(<span class="hljs-string">"n1的k3和 n4的k3指向的地址相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n1的k3和 n4的k3指向的地址不同"</span>)<br></code></pre></td></tr></table></figure>
+<pre><code>结果：
+    n1的地址和n2相同
+    n1和n3地址不同
+    {&apos;k1&apos;: &apos;1&apos;, &apos;k2&apos;: 123, &apos;k3&apos;: [&apos;len&apos;, 444]} 
+    {&apos;k1&apos;: &apos;1&apos;, &apos;k2&apos;: 123, &apos;k3&apos;: [&apos;len&apos;, 444]}
+    n1的k3和n3的k3 指向的地址相同
+    n4和n1地址不同
+    n1的k3和 n4的k3指向的地址不同
+</code></pre>
+      
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Python基础学习笔记/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="AcrossanyWhere">
@@ -232,11 +404,14 @@ a=5 #修改a以后b的值不会改变
     (&apos;a id &apos;, 38792200, 5)
 可以看出变量a和变量b是指向同一个地址，别名a指向5，而5又在其他内存区域，所以最后打印a指向的地址发生了变化
 </code></pre><ul>
-<li>Python的数据类型<br>Python支持四种不同的数值类型：</li>
+<li>Python的数据类型<br>Python支持常用的数值类型：</li>
 </ul>
 <p>•int（符号整数）：通常被称为是整数或整数，没有小数点的正或负整数。</p>
-<p>•long（长整数）：或渴望，无限大小的整数，这样写整数和一个大写或小写的L。</p>
 <p>•float（浮点实际值）：彩车，代表实数，小数除以整数部分和小数部分的书面。花车也可能是在科学记数法与E或指示的10次方é（2.5e2= 2.5×102=250）</p>
+<p>•string (字符串):</p>
+<p>•list (列表）：一次性存放多个相同类型的值，类似于C语言中数组</p>
+<p>•tuple (元组）：元组与列表类似，不同之处在于元组的元素不能修</p>
+<p>•bool (字典）：字典的每个键值(key=&gt;value)对用冒号(:)分割，每个对之间用逗号(,)分割，整个字典包括在花括号({})中</p>
 <ol>
 <li>整型<br>int类型的范围:<br> 32操作系统上:2<strong>32-1<br> 64操作系统上:2</strong>64-1<br> 在3.5中init长度理论上是无限的</li>
 </ol>
@@ -245,28 +420,15 @@ a=5 #修改a以后b的值不会改变
 <li><p>字符串<br>python中字符串本质上字符列表:</p>
 <pre><code>字符串操作:
 移除空白 strip
-分割     plit
+分割     split
 计算长度 len
 索引     index
 切片     obj[1:],obj[1:10]
 </code></pre><p> 字符串需要注意到地方 万恶的 +号<br> 因为字符数组+一个元素,开辟一块新空间 复制一份数组 把新元素添加进去所以效率低,耗费内存</p>
 <figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">s=<span class="hljs-string">'string'</span><br>print(id(s))<br>s2=s+<span class="hljs-string">'a'</span><span class="hljs-comment">#新开辟一块内存给s2,然后再列表尾部添加字符'a' 当数据量大时，非常占用资源</span><br>print(id(s2))<br></code></pre></td></tr></table></figure>
 </li>
-<li><p>布尔</p>
+<li><p>列表</p>
 </li>
-<li><p>元组</p>
-</li>
-</ol>
-<ul>
-<li><p>元祖基本操作（元祖中的元素不可修改）元祖的元素的元素可以修改</p>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">t2=(<span class="hljs-number">11</span>,<span class="hljs-number">22</span>,&#123;<span class="hljs-string">'k1'</span>:<span class="hljs-string">'1'</span>&#125;)<br>print(t2)<br>t2[<span class="hljs-number">2</span>][<span class="hljs-string">'k1'</span>]=<span class="hljs-string">'2'</span><br>print(t2)<br></code></pre></td></tr></table></figure>
-<p>  结果:</p>
-<pre><code>(11, 22, {&apos;k1&apos;: &apos;1&apos;})
-(11, 22, {&apos;k1&apos;: &apos;2&apos;})
-</code></pre></li>
-</ul>
-<ol start="5">
-<li>列表</li>
 </ol>
 <ul>
 <li>列表拥有的操作方法：<pre><code>append 增加
@@ -278,24 +440,48 @@ pop    弹出
 remove 删除指定元素
 reverse 反转
 sort   排序
-切片 split
+split  切片
 </code></pre></li>
 </ul>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python">list_int=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br>name_list=[<span class="hljs-string">"zhangsan"</span>,<span class="hljs-string">"lisi"</span>,<span class="hljs-string">"wangwu"</span>,<span class="hljs-string">"wangwu"</span>]<br>print(name_list.index(<span class="hljs-string">"wangwu"</span>)) <span class="hljs-comment">#索引wangwu在哪个位置</span><br>name_list.append(<span class="hljs-string">"zhaoliu"</span>)<span class="hljs-comment">#把zhaoliu添加到列表尾部</span><br>print(name_list)<br>print(name_list.count(<span class="hljs-string">"zhaoliu"</span>))<span class="hljs-comment">#统计有几个叫wangwu的</span><br>name_list.insert(<span class="hljs-number">1</span>,<span class="hljs-string">"wangdachui"</span>) <span class="hljs-comment">#在索引为1的后面插入一个叫wangdachui的</span><br>print(name_list)<br>print(name_list.pop()) <span class="hljs-comment">#弹出当前尾部元素</span><br>name_list.remove(<span class="hljs-string">"wangdachui"</span>)<span class="hljs-comment">#会删除列表所有的指定元素</span><br>name_list.remove(<span class="hljs-string">"wangwu"</span>)<span class="hljs-comment">#列表中的两个wangwu都会被删除</span><br>print(name_list)<br>name_list.reverse()<span class="hljs-comment">#反转列表顺序</span><br>print(name_list)<br>name_list.sort()<span class="hljs-comment">#按照aissc码进行排序</span><br>print(name_list)<br>name_list.extend(list_int)<span class="hljs-comment">#添加另一个列表到name_list</span><br>print(name_list)<br></code></pre></td></tr></table></figure>
-<ol start="6">
-<li>字典<br>字典支持的方法:<pre><code>键值对 d[key:&apos;value&apos;]
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python">list_int=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br>name_list=[<span class="hljs-string">"zhangsan"</span>,<span class="hljs-string">"lisi"</span>,<span class="hljs-string">"wangwu"</span>,<span class="hljs-string">"wangwu"</span>]<br>print(name_list.index(<span class="hljs-string">"wangwu"</span>)) <span class="hljs-comment">#索引wangwu在哪个位置</span><br>name_list.append(<span class="hljs-string">"zhaoliu"</span>)<span class="hljs-comment">#把zhaoliu添加到列表尾部</span><br>print(name_list)<br>print(name_list.count(<span class="hljs-string">"zhaoliu"</span>))<span class="hljs-comment">#统计有几个叫wangwu的</span><br>name_list.insert(<span class="hljs-number">1</span>,<span class="hljs-string">"wangdachui"</span>) <span class="hljs-comment">#在索引为1的后面插入一个叫wangdachui的</span><br>print(name_list)<br>print(name_list.pop()) <span class="hljs-comment">#弹出当前尾部元素</span><br>name_list.remove(<span class="hljs-string">"wangdachui"</span>)<span class="hljs-comment">#删除列表指定元素</span><br>name_list.remove(<span class="hljs-string">"wangwu"</span>)<span class="hljs-comment">#列表中的两个wangwu都会被删除</span><br>print(name_list)<br>name_list.reverse()<span class="hljs-comment">#反转列表顺序</span><br>print(name_list)<br>name_list.sort()<span class="hljs-comment">#按照aissc码进行排序</span><br>print(name_list)<br>name_list.extend(list_int)<span class="hljs-comment">#添加另一个列表到name_list</span><br>print(name_list)<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>元组</li>
+</ol>
+<ul>
+<li><p>元祖的操作和列表基本上相同，但是元组是只读的（元祖中的元素不可修改）；元祖的元素的元素可以修改</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">t2=(<span class="hljs-number">11</span>,<span class="hljs-number">22</span>,&#123;<span class="hljs-string">'k1'</span>:<span class="hljs-string">'1'</span>&#125;)<br>print(t2)<br>t2[<span class="hljs-number">2</span>][<span class="hljs-string">'k1'</span>]=<span class="hljs-string">'2'</span><br>print(t2)<br></code></pre></td></tr></table></figure>
+<p>  结果:</p>
+<pre><code>(11, 22, {&apos;k1&apos;: &apos;1&apos;})
+(11, 22, {&apos;k1&apos;: &apos;2&apos;})
+</code></pre></li>
+</ul>
+<ol start="5">
+<li>字典</li>
+</ol>
+<ul>
+<li>字典支持的方法:<pre><code>键值对 d[key:&apos;value&apos;]
 新增   d[key:&apos;value&apos;]
 删除   del d[key]
 所有的键 keys
 所有的值 values
 所有的键值对 items
 </code></pre></li>
+</ul>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">d1=dict(k1=<span class="hljs-string">'1'</span>,k2=<span class="hljs-string">'2'</span>)<br>d2=d1.fromkeys([<span class="hljs-string">'k1'</span>,<span class="hljs-string">'k2'</span>],<span class="hljs-string">'1'</span>)<span class="hljs-comment">#以序列 seq 中元素做字典的键，value 为字典所有键对应的初始值生成新字典</span><br>print(d2)<br>print(d1.get(<span class="hljs-string">'k3'</span>,<span class="hljs-string">'hello'</span>))<span class="hljs-comment">#get方法，如果k3不存在，则设置k3为 hello</span><br>print(d1.items())<span class="hljs-comment">#打印所有的key和values</span><br></code></pre></td></tr></table></figure>
+<pre><code>结果:
+    {&apos;k1&apos;: &apos;1&apos;, &apos;k2&apos;: &apos;1&apos;}
+    hello
+    dict_items([(&apos;k1&apos;, &apos;1&apos;), (&apos;k2&apos;, &apos;2&apos;)])
+</code></pre><ol start="6">
+<li><p>特殊数据对象”集合”<br>集合（set）是一个无序的不重复元素序列</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs undefined">s1=set()#创建一个集合对象<br>s1.add(&apos;1&apos;)<br>s1.add(&apos;1&apos;)#重复元素不会被添加<br>print(s1)<br>s2=set([&apos;张三&apos;,&apos;李四&apos;,&apos;王五&apos;,])<br>s3=set([&apos;张三&apos;,&apos;李四&apos;])<br>print(s2)<br>s4=s2.difference(s3)#求差集，s2和s3不一样的元素，<br>print(s4)<br>s2.difference_update(s3) #移除两个集合中都存在的元素,注意此方法操作的原集合<br></code></pre></td></tr></table></figure>
+<p> 结果：</p>
+<pre><code>{&apos;1&apos;}
+{&apos;张三&apos;, &apos;王五&apos;, &apos;李四&apos;}
+{&apos;王五&apos;}
+</code></pre></li>
 </ol>
-<ol start="8">
-<li>特殊数据对象”集合”</li>
-</ol>
-<p>#python中使用循环和条件判断</p>
-<p>python常用两种判断，一种是if语句，一种是while循环</p>
+<h1 id="python中使用循环和条件判断"><a href="#python中使用循环和条件判断" class="headerlink" title="python中使用循环和条件判断"></a>python中使用循环和条件判断</h1><p>python常用两种判断，一种是if语句，一种是while循环</p>
 <p>对于if语句，若条件判定为真，那么后面的语句块就会被执行。若条件判定为假，语句块就会被跳过，不会执行。对于多项选择if一起使用的else</p>
 <p>if语句和else</p>
 <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs undefined">a=1<br>b=10<br>if a&gt;b:<br>    print(&quot;a&gt;b&quot;)<br>else<br>    print(&quot;a&lt;b&quot;)<br></code></pre></td></tr></table></figure>
@@ -303,14 +489,14 @@ sort   排序
 <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">a=5<br>while a: #只有当a为0时候循环才会终止<br>    <br>    a-=1#这句话的意思是a-1然后把a-1的值赋值给a<br>    print(a)<br></code></pre></td></tr></table></figure>
 <p>for循环<br>    for循环多用于遍历某一对象</p>
 <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">list1=[1,2,3,4,5]<br>for i in list1:<br>    print(i)<br></code></pre></td></tr></table></figure>
-<p>在循环中，我们一般会做一些判断,以改变程序流程。so，Python和其他语言一样提供一下关<br>键字：<br>break[退出当前循环];countinue;pass[占位符],return[函数用];exit[退出整个程序]</p>
-<p>while a</p>
-<p>python 类</p>
-<p>python 函数</p>
-<p>python 模块</p>
-<p>python 文件</p>
-<p>python socket</p>
-<p>python exception</p>
+<pre><code>在循环中，我们一般会做一些判断,以改变程序流程。so，Python和其他语言一样提供一下关
+键字：
+break[退出当前循环]
+countinue;[结束当前的循序，进行下一个数的循环]
+pass[占位符]
+return[函数用]
+exit[退出整个程序]
+</code></pre><figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">a=<span class="hljs-number">7</span><br><span class="hljs-keyword">while</span> a:<br>    print(a)<br>    <span class="hljs-keyword">if</span> a&lt;<span class="hljs-number">5</span>:<span class="hljs-comment">#当a小于5退出当前循环</span><br>        <span class="hljs-keyword">break</span><br>    a-=<span class="hljs-number">1</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,<span class="hljs-number">7</span>):<br>    print(<span class="hljs-string">"number is "</span>,i)<br>    <span class="hljs-keyword">if</span> i==<span class="hljs-number">3</span>:<span class="hljs-comment">#只有当i是3的时候会打印hello world,然后程序重新进行循环</span><br>        print(<span class="hljs-string">"hello world"</span>)<br>    <span class="hljs-keyword">continue</span><br></code></pre></td></tr></table></figure>
 
       
     </main>
@@ -325,58 +511,13 @@ sort   排序
     </footer>
   </article>
   
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/hello-world/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="AcrossanyWhere">
-        <meta itemprop="description" content>
-        <meta itemprop="image" content="/images/avatar.png">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="生命不息梦想不止">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/passages/hello-world/" itemprop="url">Hello World</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-09T22:23:06+08:00">2019-03-09 22:23:06</time></span>
-        </span>
-        
-        
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">"My New Post"</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-    </footer>
-  </article>
-  
   
   
   
 
 <div class="comments" id="comments">
+  
+  
   
 </div>
 
@@ -412,7 +553,7 @@ sort   排序
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">2</a></div>
+      <div><a href="/archives/">4</a></div>
     </div>
     
     
@@ -426,7 +567,7 @@ sort   排序
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/">1</a></div>
+      <div><a href="/">2</a></div>
     </div>
     
     
@@ -449,7 +590,7 @@ sort   排序
         
         <li><i class="fas fa-envelope"></i><a href="mailto:openlinuxo@163.com" target="_blank">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://acrossanywhere.github.com/" target="_blank">GitHub</a></li>
+        <li><i class="fab fa-github"></i><a href="https://AcrossanyWhere.github.com/" target="_blank">GitHub</a></li>
         
       </ul>
     </div>
@@ -460,11 +601,11 @@ sort   排序
       <div><i class="fas fa-link"></i>友情链接</div>
       <ul>
         
-        <li><i class="fas fa-link"></i><a href="https://acrossanywhere.github.com/" target="_blank">GitHub</a></li>
+        <li><i class="fas fa-link"></i><a href="https://AcrossanyWhere.github.com/" target="_blank">GitHub</a></li>
         
         <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
         
-        <li><i class="fas fa-link"></i><a href="https://acrossanywhere.github.io/" target="_blank">Mygithub</a></li>
+        <li><i class="fas fa-link"></i><a href="https://AcrossanyWhere.github.io/" target="_blank">Mygithub</a></li>
         
       </ul>
     </div>

@@ -11,7 +11,7 @@
     
     
     
-    <meta name="keywords" content="Life, ARIA, Hexo">
+    <meta name="keywords" content="Life, ARIA, Hexo, 生命不息梦想不止">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -228,11 +228,14 @@ a=5 #修改a以后b的值不会改变
     (&apos;a id &apos;, 38792200, 5)
 可以看出变量a和变量b是指向同一个地址，别名a指向5，而5又在其他内存区域，所以最后打印a指向的地址发生了变化
 </code></pre><ul>
-<li>Python的数据类型<br>Python支持四种不同的数值类型：</li>
+<li>Python的数据类型<br>Python支持常用的数值类型：</li>
 </ul>
 <p>•int（符号整数）：通常被称为是整数或整数，没有小数点的正或负整数。</p>
-<p>•long（长整数）：或渴望，无限大小的整数，这样写整数和一个大写或小写的L。</p>
 <p>•float（浮点实际值）：彩车，代表实数，小数除以整数部分和小数部分的书面。花车也可能是在科学记数法与E或指示的10次方é（2.5e2= 2.5×102=250）</p>
+<p>•string (字符串):</p>
+<p>•list (列表）：一次性存放多个相同类型的值，类似于C语言中数组</p>
+<p>•tuple (元组）：元组与列表类似，不同之处在于元组的元素不能修</p>
+<p>•bool (字典）：字典的每个键值(key=&gt;value)对用冒号(:)分割，每个对之间用逗号(,)分割，整个字典包括在花括号({})中</p>
 <ol>
 <li>整型<br>int类型的范围:<br> 32操作系统上:2<strong>32-1<br> 64操作系统上:2</strong>64-1<br> 在3.5中init长度理论上是无限的</li>
 </ol>
@@ -241,28 +244,15 @@ a=5 #修改a以后b的值不会改变
 <li><p>字符串<br>python中字符串本质上字符列表:</p>
 <pre><code>字符串操作:
 移除空白 strip
-分割     plit
+分割     split
 计算长度 len
 索引     index
 切片     obj[1:],obj[1:10]
 </code></pre><p> 字符串需要注意到地方 万恶的 +号<br> 因为字符数组+一个元素,开辟一块新空间 复制一份数组 把新元素添加进去所以效率低,耗费内存</p>
 <figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">s=<span class="hljs-string">'string'</span><br>print(id(s))<br>s2=s+<span class="hljs-string">'a'</span><span class="hljs-comment">#新开辟一块内存给s2,然后再列表尾部添加字符'a' 当数据量大时，非常占用资源</span><br>print(id(s2))<br></code></pre></td></tr></table></figure>
 </li>
-<li><p>布尔</p>
+<li><p>列表</p>
 </li>
-<li><p>元组</p>
-</li>
-</ol>
-<ul>
-<li><p>元祖基本操作（元祖中的元素不可修改）元祖的元素的元素可以修改</p>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">t2=(<span class="hljs-number">11</span>,<span class="hljs-number">22</span>,&#123;<span class="hljs-string">'k1'</span>:<span class="hljs-string">'1'</span>&#125;)<br>print(t2)<br>t2[<span class="hljs-number">2</span>][<span class="hljs-string">'k1'</span>]=<span class="hljs-string">'2'</span><br>print(t2)<br></code></pre></td></tr></table></figure>
-<p>  结果:</p>
-<pre><code>(11, 22, {&apos;k1&apos;: &apos;1&apos;})
-(11, 22, {&apos;k1&apos;: &apos;2&apos;})
-</code></pre></li>
-</ul>
-<ol start="5">
-<li>列表</li>
 </ol>
 <ul>
 <li>列表拥有的操作方法：<pre><code>append 增加
@@ -274,24 +264,48 @@ pop    弹出
 remove 删除指定元素
 reverse 反转
 sort   排序
-切片 split
+split  切片
 </code></pre></li>
 </ul>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python">list_int=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br>name_list=[<span class="hljs-string">"zhangsan"</span>,<span class="hljs-string">"lisi"</span>,<span class="hljs-string">"wangwu"</span>,<span class="hljs-string">"wangwu"</span>]<br>print(name_list.index(<span class="hljs-string">"wangwu"</span>)) <span class="hljs-comment">#索引wangwu在哪个位置</span><br>name_list.append(<span class="hljs-string">"zhaoliu"</span>)<span class="hljs-comment">#把zhaoliu添加到列表尾部</span><br>print(name_list)<br>print(name_list.count(<span class="hljs-string">"zhaoliu"</span>))<span class="hljs-comment">#统计有几个叫wangwu的</span><br>name_list.insert(<span class="hljs-number">1</span>,<span class="hljs-string">"wangdachui"</span>) <span class="hljs-comment">#在索引为1的后面插入一个叫wangdachui的</span><br>print(name_list)<br>print(name_list.pop()) <span class="hljs-comment">#弹出当前尾部元素</span><br>name_list.remove(<span class="hljs-string">"wangdachui"</span>)<span class="hljs-comment">#会删除列表所有的指定元素</span><br>name_list.remove(<span class="hljs-string">"wangwu"</span>)<span class="hljs-comment">#列表中的两个wangwu都会被删除</span><br>print(name_list)<br>name_list.reverse()<span class="hljs-comment">#反转列表顺序</span><br>print(name_list)<br>name_list.sort()<span class="hljs-comment">#按照aissc码进行排序</span><br>print(name_list)<br>name_list.extend(list_int)<span class="hljs-comment">#添加另一个列表到name_list</span><br>print(name_list)<br></code></pre></td></tr></table></figure>
-<ol start="6">
-<li>字典<br>字典支持的方法:<pre><code>键值对 d[key:&apos;value&apos;]
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python">list_int=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]<br>name_list=[<span class="hljs-string">"zhangsan"</span>,<span class="hljs-string">"lisi"</span>,<span class="hljs-string">"wangwu"</span>,<span class="hljs-string">"wangwu"</span>]<br>print(name_list.index(<span class="hljs-string">"wangwu"</span>)) <span class="hljs-comment">#索引wangwu在哪个位置</span><br>name_list.append(<span class="hljs-string">"zhaoliu"</span>)<span class="hljs-comment">#把zhaoliu添加到列表尾部</span><br>print(name_list)<br>print(name_list.count(<span class="hljs-string">"zhaoliu"</span>))<span class="hljs-comment">#统计有几个叫wangwu的</span><br>name_list.insert(<span class="hljs-number">1</span>,<span class="hljs-string">"wangdachui"</span>) <span class="hljs-comment">#在索引为1的后面插入一个叫wangdachui的</span><br>print(name_list)<br>print(name_list.pop()) <span class="hljs-comment">#弹出当前尾部元素</span><br>name_list.remove(<span class="hljs-string">"wangdachui"</span>)<span class="hljs-comment">#删除列表指定元素</span><br>name_list.remove(<span class="hljs-string">"wangwu"</span>)<span class="hljs-comment">#列表中的两个wangwu都会被删除</span><br>print(name_list)<br>name_list.reverse()<span class="hljs-comment">#反转列表顺序</span><br>print(name_list)<br>name_list.sort()<span class="hljs-comment">#按照aissc码进行排序</span><br>print(name_list)<br>name_list.extend(list_int)<span class="hljs-comment">#添加另一个列表到name_list</span><br>print(name_list)<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>元组</li>
+</ol>
+<ul>
+<li><p>元祖的操作和列表基本上相同，但是元组是只读的（元祖中的元素不可修改）；元祖的元素的元素可以修改</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">t2=(<span class="hljs-number">11</span>,<span class="hljs-number">22</span>,&#123;<span class="hljs-string">'k1'</span>:<span class="hljs-string">'1'</span>&#125;)<br>print(t2)<br>t2[<span class="hljs-number">2</span>][<span class="hljs-string">'k1'</span>]=<span class="hljs-string">'2'</span><br>print(t2)<br></code></pre></td></tr></table></figure>
+<p>  结果:</p>
+<pre><code>(11, 22, {&apos;k1&apos;: &apos;1&apos;})
+(11, 22, {&apos;k1&apos;: &apos;2&apos;})
+</code></pre></li>
+</ul>
+<ol start="5">
+<li>字典</li>
+</ol>
+<ul>
+<li>字典支持的方法:<pre><code>键值对 d[key:&apos;value&apos;]
 新增   d[key:&apos;value&apos;]
 删除   del d[key]
 所有的键 keys
 所有的值 values
 所有的键值对 items
 </code></pre></li>
+</ul>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">d1=dict(k1=<span class="hljs-string">'1'</span>,k2=<span class="hljs-string">'2'</span>)<br>d2=d1.fromkeys([<span class="hljs-string">'k1'</span>,<span class="hljs-string">'k2'</span>],<span class="hljs-string">'1'</span>)<span class="hljs-comment">#以序列 seq 中元素做字典的键，value 为字典所有键对应的初始值生成新字典</span><br>print(d2)<br>print(d1.get(<span class="hljs-string">'k3'</span>,<span class="hljs-string">'hello'</span>))<span class="hljs-comment">#get方法，如果k3不存在，则设置k3为 hello</span><br>print(d1.items())<span class="hljs-comment">#打印所有的key和values</span><br></code></pre></td></tr></table></figure>
+<pre><code>结果:
+    {&apos;k1&apos;: &apos;1&apos;, &apos;k2&apos;: &apos;1&apos;}
+    hello
+    dict_items([(&apos;k1&apos;, &apos;1&apos;), (&apos;k2&apos;, &apos;2&apos;)])
+</code></pre><ol start="6">
+<li><p>特殊数据对象”集合”<br>集合（set）是一个无序的不重复元素序列</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs undefined">s1=set()#创建一个集合对象<br>s1.add(&apos;1&apos;)<br>s1.add(&apos;1&apos;)#重复元素不会被添加<br>print(s1)<br>s2=set([&apos;张三&apos;,&apos;李四&apos;,&apos;王五&apos;,])<br>s3=set([&apos;张三&apos;,&apos;李四&apos;])<br>print(s2)<br>s4=s2.difference(s3)#求差集，s2和s3不一样的元素，<br>print(s4)<br>s2.difference_update(s3) #移除两个集合中都存在的元素,注意此方法操作的原集合<br></code></pre></td></tr></table></figure>
+<p> 结果：</p>
+<pre><code>{&apos;1&apos;}
+{&apos;张三&apos;, &apos;王五&apos;, &apos;李四&apos;}
+{&apos;王五&apos;}
+</code></pre></li>
 </ol>
-<ol start="8">
-<li>特殊数据对象”集合”</li>
-</ol>
-<p>#python中使用循环和条件判断</p>
-<p>python常用两种判断，一种是if语句，一种是while循环</p>
+<h1 id="python中使用循环和条件判断"><a href="#python中使用循环和条件判断" class="headerlink" title="python中使用循环和条件判断"></a>python中使用循环和条件判断</h1><p>python常用两种判断，一种是if语句，一种是while循环</p>
 <p>对于if语句，若条件判定为真，那么后面的语句块就会被执行。若条件判定为假，语句块就会被跳过，不会执行。对于多项选择if一起使用的else</p>
 <p>if语句和else</p>
 <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs undefined">a=1<br>b=10<br>if a&gt;b:<br>    print(&quot;a&gt;b&quot;)<br>else<br>    print(&quot;a&lt;b&quot;)<br></code></pre></td></tr></table></figure>
@@ -299,14 +313,14 @@ sort   排序
 <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">a=5<br>while a: #只有当a为0时候循环才会终止<br>    <br>    a-=1#这句话的意思是a-1然后把a-1的值赋值给a<br>    print(a)<br></code></pre></td></tr></table></figure>
 <p>for循环<br>    for循环多用于遍历某一对象</p>
 <figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined">list1=[1,2,3,4,5]<br>for i in list1:<br>    print(i)<br></code></pre></td></tr></table></figure>
-<p>在循环中，我们一般会做一些判断,以改变程序流程。so，Python和其他语言一样提供一下关<br>键字：<br>break[退出当前循环];countinue;pass[占位符],return[函数用];exit[退出整个程序]</p>
-<p>while a</p>
-<p>python 类</p>
-<p>python 函数</p>
-<p>python 模块</p>
-<p>python 文件</p>
-<p>python socket</p>
-<p>python exception</p>
+<pre><code>在循环中，我们一般会做一些判断,以改变程序流程。so，Python和其他语言一样提供一下关
+键字：
+break[退出当前循环]
+countinue;[结束当前的循序，进行下一个数的循环]
+pass[占位符]
+return[函数用]
+exit[退出整个程序]
+</code></pre><figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">a=<span class="hljs-number">7</span><br><span class="hljs-keyword">while</span> a:<br>    print(a)<br>    <span class="hljs-keyword">if</span> a&lt;<span class="hljs-number">5</span>:<span class="hljs-comment">#当a小于5退出当前循环</span><br>        <span class="hljs-keyword">break</span><br>    a-=<span class="hljs-number">1</span><br><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">1</span>,<span class="hljs-number">7</span>):<br>    print(<span class="hljs-string">"number is "</span>,i)<br>    <span class="hljs-keyword">if</span> i==<span class="hljs-number">3</span>:<span class="hljs-comment">#只有当i是3的时候会打印hello world,然后程序重新进行循环</span><br>        print(<span class="hljs-string">"hello world"</span>)<br>    <span class="hljs-keyword">continue</span><br></code></pre></td></tr></table></figure>
 
     </main>
     <footer class="post-footer">
@@ -321,13 +335,31 @@ sort   排序
   </article>
   
   
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/passages/hello-world/" rel="next" title="Hello World"><i class="fas fa-angle-left"></i><span class="nav-title">Hello World</span></a>
-      
     </div>
     <div class="page-nav-prev page-nav-item">
+      
+      <a href="/passages/python深浅拷贝/" rel="prev" title="python深浅拷贝"><span class="nav-title">python深浅拷贝</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -336,6 +368,46 @@ sort   排序
   
 
 <div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "",
+      "user": "",
+      "repo": "",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "Python基础语法学习笔记",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
   
 </div>
 
@@ -371,7 +443,7 @@ sort   排序
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">2</a></div>
+      <div><a href="/archives/">4</a></div>
     </div>
     
     
@@ -385,7 +457,7 @@ sort   排序
     
     <div class="tags-count count-block">
       <div class="site-count-title">标签</div>
-      <div><a href="/">1</a></div>
+      <div><a href="/">2</a></div>
     </div>
     
     
@@ -407,7 +479,7 @@ sort   排序
     <hr>
     <div class="post-toc sidebar-item" id="toc-div">
       <div><i class="fas fa-list-ol"></i>文章目录</div>
-      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Python基础语法"><span class="toc-text">Python基础语法</span></a></li></ol></div>
+      <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Python基础语法"><span class="toc-text">Python基础语法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#python中使用循环和条件判断"><span class="toc-text">python中使用循环和条件判断</span></a></li></ol></div>
     </div>
     
     
@@ -419,7 +491,7 @@ sort   排序
         
         <li><i class="fas fa-envelope"></i><a href="mailto:openlinuxo@163.com" target="_blank">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://acrossanywhere.github.com/" target="_blank">GitHub</a></li>
+        <li><i class="fab fa-github"></i><a href="https://AcrossanyWhere.github.com/" target="_blank">GitHub</a></li>
         
       </ul>
     </div>
@@ -430,11 +502,11 @@ sort   排序
       <div><i class="fas fa-link"></i>友情链接</div>
       <ul>
         
-        <li><i class="fas fa-link"></i><a href="https://acrossanywhere.github.com/" target="_blank">GitHub</a></li>
+        <li><i class="fas fa-link"></i><a href="https://AcrossanyWhere.github.com/" target="_blank">GitHub</a></li>
         
         <li><i class="fas fa-link"></i><a href="https://developer.mozilla.org/" target="_blank">MDN</a></li>
         
-        <li><i class="fas fa-link"></i><a href="https://acrossanywhere.github.io/" target="_blank">Mygithub</a></li>
+        <li><i class="fas fa-link"></i><a href="https://AcrossanyWhere.github.io/" target="_blank">Mygithub</a></li>
         
       </ul>
     </div>

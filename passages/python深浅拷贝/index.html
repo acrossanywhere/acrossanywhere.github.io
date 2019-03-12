@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head><meta name="generator" content="Hexo 3.8.0">
@@ -134,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>标签 | 生命不息梦想不止</title>
+    <title>python深浅拷贝 | 生命不息梦想不止</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -170,23 +169,135 @@
         <div class="main-container">
           <div class="content">
             
-<div id="tags" class="tags page">
-  <article class="article post card">
+<div id="post" class="page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/python深浅拷贝/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="AcrossanyWhere">
+       <meta itemprop="description" content>
+       <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="生命不息梦想不止">
+      </span>
+    </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">标签</h1>
-    </header>
-    <main class="post-main">
-      <h2 class="page-counter">
+      <h1 class="post-title" itemprop="name headline">python深浅拷贝</h1>
+      <div class="post-meta">
         
-        你已经创建了 2 个标签！
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-12T23:04:40+08:00">2019-03-12 23:04:40</time></span>
+        </span>
         
-      </h2>
-      <div class="tags-cloud">
-        <a href="/tags/python/" style="font-size: 32px; color: #111">python</a> <a href="/tags/函数/" style="font-size: 16px; color: #777">函数</a>
+        
+        
+        
+        
       </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>Python当中对于拷贝，分为两种类型。一种是数字和字符串，另一种就是列表、元组、字典等其他类型了</p>
+<p>对于字符串，和数字,来说，深拷贝和浅拷贝永远都是用的同一个内存中的值，它们指向的地址是相同的</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs python">n1=&#123;<span class="hljs-string">"k1"</span>:<span class="hljs-string">"1"</span>,<span class="hljs-string">"k2"</span>:<span class="hljs-number">123</span>,<span class="hljs-string">"k3"</span>:[<span class="hljs-string">"len"</span>,<span class="hljs-number">444</span>]&#125;<br>n2=n1<span class="hljs-comment">#将n1赋值给n2</span><br><span class="hljs-keyword">if</span> (id(n1))==(id(n2)):<br>    print(<span class="hljs-string">"n1的地址和n2相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n1的地址和n2不同"</span>)<br><br>n3=copy.copy(n1)<span class="hljs-comment">#浅拷贝创建新对象。对象只拷原来对象第一层的数据</span><br><span class="hljs-keyword">if</span> (id(n3))==(id(n1)):<br>    print(<span class="hljs-string">"n1和n3地址相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n1和n3地址不同"</span>)<br>print(n1,<span class="hljs-string">'\n'</span>,n3) <span class="hljs-comment">#n3 和n1 是两个不同的对象。ID不一样,但指向的值是一样的</span><br><span class="hljs-keyword">if</span> (id(n1[<span class="hljs-string">"k3"</span>]))==(id(n3[<span class="hljs-string">"k3"</span>])): <span class="hljs-comment">#测试一下n1和n3指向的数据地址是否一致</span><br>    print(<span class="hljs-string">"n1的k3和n3的k3 指向的地址相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n1的k3和n3的k3 指向的地址不同"</span>)<br><br>n4=copy.deepcopy(n1)<br><span class="hljs-keyword">if</span> (id(n4))==(id(n1)): <span class="hljs-comment">#无论嵌套多少层，深拷贝会完整复制一份新的数据。</span><br>    print(<span class="hljs-string">"n4和n1地址相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n4和n1地址不同"</span>)<br><br><span class="hljs-keyword">if</span> (id(n1[<span class="hljs-string">"k3"</span>]))==(id(n4[<span class="hljs-string">"k3"</span>])): <span class="hljs-comment">#测试一下n1和n4指向的数据地址是否一致</span><br>    print(<span class="hljs-string">"n1的k3和 n4的k3指向的地址相同"</span>)<br><span class="hljs-keyword">else</span>:<br>    print(<span class="hljs-string">"n1的k3和 n4的k3指向的地址不同"</span>)<br></code></pre></td></tr></table></figure>
+<pre><code>结果：
+    n1的地址和n2相同
+    n1和n3地址不同
+    {&apos;k1&apos;: &apos;1&apos;, &apos;k2&apos;: 123, &apos;k3&apos;: [&apos;len&apos;, 444]} 
+    {&apos;k1&apos;: &apos;1&apos;, &apos;k2&apos;: 123, &apos;k3&apos;: [&apos;len&apos;, 444]}
+    n1的k3和n3的k3 指向的地址相同
+    n4和n1地址不同
+    n1的k3和 n4的k3指向的地址不同
+</code></pre>
     </main>
-    <footer class="post-footer"></footer>
+    <footer class="post-footer">
+      
+    </footer>
   </article>
+  
+  
+<div class="reward" id="reward">
+  <p>坚持原创技术分享，您的支持是我前进的动力！</p>
+  <button id="reward-button" class="button" disable="enable">打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechat">
+      <img id="wechat_qr" src="/images/WeChatPay.png" alt="微信支付">
+      <span>微信支付</span>
+    </div>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/passages/Python基础学习笔记/" rel="next" title="Python基础语法学习笔记"><i class="fas fa-angle-left"></i><span class="nav-title">Python基础语法学习笔记</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/passages/Python可命名元组/" rel="prev" title="Python可命名元祖"><span class="nav-title">Python可命名元祖</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "",
+      "user": "",
+      "repo": "",
+      "client_id": "",
+      "client_secret": "",
+      "no_comment": "这个页面还没有评论，现在就去评论吧！",
+      "go_to_comment": "去评论",
+      "issue_title": "python深浅拷贝",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
 </div>
 
           </div>
@@ -244,6 +355,11 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+    
+    
+    
     
     
     <hr>
@@ -315,5 +431,3 @@
 
   </body>
 </html>
-
-
