@@ -133,7 +133,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Python中使用函数 | 生命不息梦想不止</title>
+    <title>Python迭代器 | 生命不息梦想不止</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
@@ -173,7 +173,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Python中使用函数/">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Python迭代器/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="AcrossanyWhere">
        <meta itemprop="description" content>
@@ -184,11 +184,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">Python中使用函数</h1>
+      <h1 class="post-title" itemprop="name headline">Python迭代器</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-14T00:19:04+08:00">2019-03-14 00:19:04</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-14T18:55:50+08:00">2019-03-14 18:55:50</time></span>
         </span>
         
         
@@ -198,46 +198,43 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。<br>函数能提高应用的模块性，和代码的重复利用率。你已经知道Python提供了许多内建函数，<br>比如print()。但你也可以自己创建函数，这被叫做用户自定义函数</p>
-<p>你可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
-<pre><code>函数代码块以 def 关键词开头，后接函数标识符名称和圆括号()。
-任何传入参数和自变量必须放在圆括号中间。圆括号之间可以用于定义参数。
-函数的第一行语句可以选择性地使用文档字符串—用于存放函数说明。
-函数内容以冒号起始，并且缩进。
-return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None。
-</code></pre><ul>
-<li><p>函数的返回值</p>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span><span class="hljs-params">(a)</span>:</span><br>     a+=<span class="hljs-number">1</span><br>     <span class="hljs-keyword">return</span> a <span class="hljs-comment">#这里返回a+1的结果</span><br>print(fun1(<span class="hljs-number">5</span>))<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>默认参数</p>
-</li>
+      <ul>
+<li><p>什么是迭代器？</p>
+<pre><code>迭代是Python最强大的功能之一，是访问集合元素的一种方式。
+
+迭代器是一个可以记住遍历的位置的对象。
+
+迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。
+
+迭代器有两个基本的方法：iter() 和 next()。
+
+字符串，列表或元组对象都可用于创建迭代器 
+</code></pre></li>
 </ul>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show1</span><span class="hljs-params">(a1,a2=<span class="hljs-number">999</span>,a3=<span class="hljs-number">476</span>)</span>:</span> <span class="hljs-comment">#默认参数必须放最后</span><br>    print(a1,a2,a3)<br>show1(<span class="hljs-number">11</span>, <span class="hljs-number">22</span>)<span class="hljs-comment">#只传递两个参数，默认参数a3也会打印</span><br>show1(<span class="hljs-number">111</span>,<span class="hljs-number">22</span>,<span class="hljs-number">333</span>)<span class="hljs-comment">#给默认参数传递新值，这样会修改默认参数值</span><br></code></pre></td></tr></table></figure>
 <ul>
-<li><p>指定参数</p>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show2</span><span class="hljs-params">(a1,a2)</span>:</span><span class="hljs-comment">#默认传参数按顺序来</span><br>    print(a1,a2)<br>show2(<span class="hljs-number">999</span>,<span class="hljs-number">123</span>)<span class="hljs-comment">#不指定参数</span><br>show2(a2=<span class="hljs-number">999</span>,a1=<span class="hljs-number">123</span>)<span class="hljs-comment">#指定参数</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>动态参数</p>
-</li>
+<li><p>迭代器解决了什么问题？</p>
+<pre><code>当读取一个特别文件时，如一个2G日志，假设硬盘IO每秒30M
+使用文件的方式读取该文件需要大概一分钟，才能完全将该文件
+加载到内存。
+通常我们查看日志也就看最新的几行或者几百行。这样一来
+打开速度慢。二来太浪费内存,如果文件超级大，可能会卡死
+
+迭代器很好的解决了这个问题。迭代器可以读取一行显示一行
+</code></pre></li>
 </ul>
-<p>1 <em>args 用来将参数打包成tuple给函数体调用，参数个数不受限制，</em>args接收元组作为位置参数<br>2 <em>args 将参数打包成字典<br>3 注意点：参数arg、</em>args、<strong>kwargs三个参数的位置必须是一定的。必须是(arg,*args,</strong>kwargs)<br>这个顺序，否则程序会报错</p>
-<p><em>args 用来将参数打包成tuple给函数体调用，参数个数不受限制，</em>args接收元组作为位置参数<br><figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#将参数打包成元组</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show1</span><span class="hljs-params">(*args)</span>:</span><br>    print(args,type(args))<br>show1(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<br><br><span class="hljs-comment">#args 将参数打包成字典</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show2</span><span class="hljs-params">(**args)</span>:</span><br>    print(args,type(args))<br>show2(a=<span class="hljs-number">123</span>,b=<span class="hljs-number">456</span>,c=<span class="hljs-number">789</span>)<br></code></pre></td></tr></table></figure></p>
-<pre><code>结果:
-    (1, 2, 3) &lt;class &apos;tuple&apos;&gt;
-    {&apos;a&apos;: 123, &apos;b&apos;: 456, &apos;c&apos;: 789} &lt;class &apos;dict&apos;&gt;
-</code></pre><ul>
-<li><p>匿名函数:<br>  当我们在传入函数时，有些时候，不需要显式地定义函数，直接传入匿名函数更方便。<br>  关键字lambda表示匿名函数<br>  匿名函数有个限制，就是只能有一个表达式，不用写return，返回值就是该表达式的结果。</p>
-<p>  用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是<br>  一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数</p>
-</li>
+<p>如何定义迭代器，如下:<br><figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><br>names=iter([<span class="hljs-string">'A'</span>,<span class="hljs-string">'B'</span>,<span class="hljs-string">'C'</span>,<span class="hljs-string">'D'</span>]) <span class="hljs-comment">#iter关键字生成迭代器</span><br><br><span class="hljs-comment">#print(names[1]) #直接用索引访问会报错</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#当迭代器中的元素以及访问完，最后会报StopIteration错误</span><br><br>`<br></code></pre></td></tr></table></figure></p>
+<ul>
+<li>生成器<pre><code>一个函数调用时返回一个迭代器，这个函数叫做生成器(generator)，
+如果函数中包含yield语法，这个函数就会变成生成器
+</code></pre></li>
 </ul>
-<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#普通函数</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span><span class="hljs-params">(a)</span>:</span><br>    a+=<span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> a<br>print(fun1(<span class="hljs-number">5</span>))<br><br><span class="hljs-comment">#lambda表达式 实现相同的效果</span><br><br>fun2=<span class="hljs-keyword">lambda</span>  a: a+<span class="hljs-number">1</span> <span class="hljs-comment">#这里a相当于形参，冒号前面是函数体，冒号后面是函数执行的代码</span><br><br>print(fun2(<span class="hljs-number">5</span>))<br></code></pre></td></tr></table></figure>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
         
-        <a class="post-tag button" href="/tags/函数/" rel="tag"><i class="fas fa-tags"></i>函数</a>
+        <a class="post-tag button" href="/tags/python/" rel="tag"><i class="fas fa-tags"></i>python</a>
         
       </div>
       
@@ -266,12 +263,10 @@ return [表达式] 结束函数，选择性地返回一个值给调用方。不�
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/passages/Python可命名元组/" rel="next" title="Python可命名元祖"><i class="fas fa-angle-left"></i><span class="nav-title">Python可命名元祖</span></a>
+      <a href="/passages/Python中使用函数/" rel="next" title="Python中使用函数"><i class="fas fa-angle-left"></i><span class="nav-title">Python中使用函数</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
-      
-      <a href="/passages/Python迭代器/" rel="prev" title="Python迭代器"><span class="nav-title">Python迭代器</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -298,7 +293,7 @@ return [表达式] 结束函数，选择性地返回一个值给调用方。不�
       "client_secret": "",
       "no_comment": "这个页面还没有评论，现在就去评论吧！",
       "go_to_comment": "去评论",
-      "issue_title": "Python中使用函数",
+      "issue_title": "Python迭代器",
       "btn_class": "button",
       "comments_target": "#comment-thread"
     });
