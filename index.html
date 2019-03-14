@@ -221,17 +221,12 @@
 使用文件的方式读取该文件需要大概一分钟，才能完全将该文件
 加载到内存。
 通常我们查看日志也就看最新的几行或者几百行。这样一来
-打开速度慢。二来太浪费内存,如果文件超级大，可能会卡死
+打开速度慢。二来太浪费内存,如果文件超级大，可能会卡
 
 迭代器很好的解决了这个问题。迭代器可以读取一行显示一行
 </code></pre></li>
 </ul>
-<p>如何定义迭代器，如下:<br><figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><br>names=iter([<span class="hljs-string">'A'</span>,<span class="hljs-string">'B'</span>,<span class="hljs-string">'C'</span>,<span class="hljs-string">'D'</span>]) <span class="hljs-comment">#iter关键字生成迭代器</span><br><br><span class="hljs-comment">#print(names[1]) #直接用索引访问会报错</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#当迭代器中的元素以及访问完，最后会报StopIteration错误</span><br><br>`<br></code></pre></td></tr></table></figure></p>
-<ul>
-<li>生成器<pre><code>一个函数调用时返回一个迭代器，这个函数叫做生成器(generator)，
-如果函数中包含yield语法，这个函数就会变成生成器
-</code></pre></li>
-</ul>
+<p>如何定义迭代器，如下:<br><figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><br>names=iter([<span class="hljs-string">'A'</span>,<span class="hljs-string">'B'</span>,<span class="hljs-string">'C'</span>,<span class="hljs-string">'D'</span>]) <span class="hljs-comment">#iter关键字生成迭代器</span><br><br><span class="hljs-comment">#print(names[1]) #直接用索引访问会报错</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#当迭代器中的元素以及访问完，最后会报StopIteration错误</span><br></code></pre></td></tr></table></figure></p>
 
       
     </main>

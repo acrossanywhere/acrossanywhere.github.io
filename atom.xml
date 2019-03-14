@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-14T12:15:33.849Z</updated>
+  <updated>2019-03-14T04:20:25.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/passages/Python%E8%BF%AD%E4%BB%A3%E5%99%A8/"/>
     <id>http://yoursite.com/passages/Python迭代器/</id>
     <published>2019-03-14T10:55:50.000Z</published>
-    <updated>2019-03-14T12:15:33.849Z</updated>
+    <updated>2019-03-14T04:20:25.000Z</updated>
     
-    <content type="html"><![CDATA[<ul><li><p>什么是迭代器？</p><pre><code>迭代是Python最强大的功能之一，是访问集合元素的一种方式。迭代器是一个可以记住遍历的位置的对象。迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。迭代器有两个基本的方法：iter() 和 next()。字符串，列表或元组对象都可用于创建迭代器 </code></pre></li></ul><ul><li><p>迭代器解决了什么问题？</p><pre><code>当读取一个特别文件时，如一个2G日志，假设硬盘IO每秒30M使用文件的方式读取该文件需要大概一分钟，才能完全将该文件加载到内存。通常我们查看日志也就看最新的几行或者几百行。这样一来打开速度慢。二来太浪费内存,如果文件超级大，可能会卡死迭代器很好的解决了这个问题。迭代器可以读取一行显示一行</code></pre></li></ul><p>如何定义迭代器，如下:<br><figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><br>names=iter([<span class="hljs-string">'A'</span>,<span class="hljs-string">'B'</span>,<span class="hljs-string">'C'</span>,<span class="hljs-string">'D'</span>]) <span class="hljs-comment">#iter关键字生成迭代器</span><br><br><span class="hljs-comment">#print(names[1]) #直接用索引访问会报错</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#当迭代器中的元素以及访问完，最后会报StopIteration错误</span><br><br>`<br></code></pre></td></tr></table></figure></p><ul><li>生成器<pre><code>一个函数调用时返回一个迭代器，这个函数叫做生成器(generator)，如果函数中包含yield语法，这个函数就会变成生成器</code></pre></li></ul>]]></content>
+    <content type="html"><![CDATA[<ul><li><p>什么是迭代器？</p><pre><code>迭代是Python最强大的功能之一，是访问集合元素的一种方式。迭代器是一个可以记住遍历的位置的对象。迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。迭代器有两个基本的方法：iter() 和 next()。字符串，列表或元组对象都可用于创建迭代器 </code></pre></li></ul><ul><li><p>迭代器解决了什么问题？</p><pre><code>当读取一个特别文件时，如一个2G日志，假设硬盘IO每秒30M使用文件的方式读取该文件需要大概一分钟，才能完全将该文件加载到内存。通常我们查看日志也就看最新的几行或者几百行。这样一来打开速度慢。二来太浪费内存,如果文件超级大，可能会卡迭代器很好的解决了这个问题。迭代器可以读取一行显示一行</code></pre></li></ul><p>如何定义迭代器，如下:<br><figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><br>names=iter([<span class="hljs-string">'A'</span>,<span class="hljs-string">'B'</span>,<span class="hljs-string">'C'</span>,<span class="hljs-string">'D'</span>]) <span class="hljs-comment">#iter关键字生成迭代器</span><br><br><span class="hljs-comment">#print(names[1]) #直接用索引访问会报错</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#访问迭代器中的元素</span><br>print(names.__next__()) <span class="hljs-comment">#当迭代器中的元素以及访问完，最后会报StopIteration错误</span><br></code></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
