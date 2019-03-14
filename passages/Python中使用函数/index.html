@@ -212,10 +212,10 @@ return [表达式] 结束函数，选择性地返回一个值给调用方。不�
 <li><p>默认参数</p>
 </li>
 </ul>
-<figure class="hljs highlight plain"><figcaption><span>show1(a1,a2</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs def">    print(a1,a2,a3)<br>show1(11, 22)#只传递两个参数，默认参数a3也会打印<br>show1(111,22,333)#给默认参数传递新值，这样会修改默认参数值<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show1</span><span class="hljs-params">(a1,a2=<span class="hljs-number">999</span>,a3=<span class="hljs-number">476</span>)</span>:</span> <span class="hljs-comment">#默认参数必须放最后</span><br>    print(a1,a2,a3)<br>show1(<span class="hljs-number">11</span>, <span class="hljs-number">22</span>)<span class="hljs-comment">#只传递两个参数，默认参数a3也会打印</span><br>show1(<span class="hljs-number">111</span>,<span class="hljs-number">22</span>,<span class="hljs-number">333</span>)<span class="hljs-comment">#给默认参数传递新值，这样会修改默认参数值</span><br></code></pre></td></tr></table></figure>
 <ul>
 <li><p>指定参数</p>
-<figure class="hljs highlight plain"><figcaption><span>show2(a1,a2):#默认传参数按顺序来</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs def">    print(a1,a2)<br>show2(999,123)#不指定参数<br>show2(a2=999,a1=123)#指定参数<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">def show2(a1,a2):#默认传参数按顺序来<br>    print(a1,a2)<br>show2(999,123)#不指定参数<br>show2(a2=999,a1=123)#指定参数<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>动态参数</p>
 </li>
