@@ -207,7 +207,7 @@
 return [表达式] 结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回 None。
 </code></pre><ul>
 <li><p>函数的返回值</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">def fun1(a):<br>     a+=1<br>     return a #这里返回a+1的结果<br>print(fun1(5))<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span><span class="hljs-params">(a)</span>:</span><br>     a+=<span class="hljs-number">1</span><br>     <span class="hljs-keyword">return</span> a <span class="hljs-comment">#这里返回a+1的结果</span><br>print(fun1(<span class="hljs-number">5</span>))<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>默认参数</p>
 </li>
@@ -215,7 +215,7 @@ return [表达式] 结束函数，选择性地返回一个值给调用方。不�
 <figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show1</span><span class="hljs-params">(a1,a2=<span class="hljs-number">999</span>,a3=<span class="hljs-number">476</span>)</span>:</span> <span class="hljs-comment">#默认参数必须放最后</span><br>    print(a1,a2,a3)<br>show1(<span class="hljs-number">11</span>, <span class="hljs-number">22</span>)<span class="hljs-comment">#只传递两个参数，默认参数a3也会打印</span><br>show1(<span class="hljs-number">111</span>,<span class="hljs-number">22</span>,<span class="hljs-number">333</span>)<span class="hljs-comment">#给默认参数传递新值，这样会修改默认参数值</span><br></code></pre></td></tr></table></figure>
 <ul>
 <li><p>指定参数</p>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">def show2(a1,a2):#默认传参数按顺序来<br>    print(a1,a2)<br>show2(999,123)#不指定参数<br>show2(a2=999,a1=123)#指定参数<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">show2</span><span class="hljs-params">(a1,a2)</span>:</span><span class="hljs-comment">#默认传参数按顺序来</span><br>    print(a1,a2)<br>show2(<span class="hljs-number">999</span>,<span class="hljs-number">123</span>)<span class="hljs-comment">#不指定参数</span><br>show2(a2=<span class="hljs-number">999</span>,a1=<span class="hljs-number">123</span>)<span class="hljs-comment">#指定参数</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>动态参数</p>
 </li>
@@ -230,7 +230,7 @@ return [表达式] 结束函数，选择性地返回一个值给调用方。不�
 <p>  用匿名函数有个好处，因为函数没有名字，不必担心函数名冲突。此外，匿名函数也是<br>  一个函数对象，也可以把匿名函数赋值给一个变量，再利用变量来调用该函数</p>
 </li>
 </ul>
-<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#普通函数<br>def fun1(a):<br>    a+=1<br>    return a<br>print(fun1(5))<br><br>#lambda表达式 实现相同的效果<br><br>fun2=lambda  a: a+1 #这里a相当于形参，冒号前面是函数体，冒号后面是函数执行的代码<br><br>print(fun2(5))<br></code></pre></td></tr></table></figure>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#普通函数</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fun1</span><span class="hljs-params">(a)</span>:</span><br>    a+=<span class="hljs-number">1</span><br>    <span class="hljs-keyword">return</span> a<br>print(fun1(<span class="hljs-number">5</span>))<br><br><span class="hljs-comment">#lambda表达式 实现相同的效果</span><br><br>fun2=<span class="hljs-keyword">lambda</span>  a: a+<span class="hljs-number">1</span> <span class="hljs-comment">#这里a相当于形参，冒号前面是函数体，冒号后面是函数执行的代码</span><br><br>print(fun2(<span class="hljs-number">5</span>))<br></code></pre></td></tr></table></figure>
 
     </main>
     <footer class="post-footer">
