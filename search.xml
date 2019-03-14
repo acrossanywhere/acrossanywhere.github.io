@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python装饰器原理]]></title>
+    <url>%2Fpassages%2FPython%E8%A3%85%E9%A5%B0%E5%99%A8%E5%8E%9F%E7%90%86%2F</url>
+    <content type="text"><![CDATA[什么是装饰器: 有了闭包函数的概念，我们再去理解装饰器会相对容易一些。python装饰器本质上就是一个函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外的功能，装饰器的返回值也是一个函数对象（函数的指针）。装饰器函数的外部函数传入我要装饰的函数名字，返回经过修饰后函数的名字；内层函数（闭包）负责修饰被修饰函数。从上面这段描述中我们需要记住装饰器的几点属性，以便后面能更好的理解： 实质： 是一个函数 参数：是你要装饰的函数名（并非函数调用） 返回：是装饰完的函数名（也非函数调用） 作用：为已经存在的对象添加额外的功能 特点：不需要对对象做任何的代码上的变动 装饰器是用来干嘛的？ 在调用一个函数前先调用两一个函数 比如某电商网站，除了首页，点击其他页面都需要先登录 才能查看，装饰器就可以在用户点击其他页面时调用登陆函数 #未使用装饰器版本的代码 123456789def login(fun): print("这里是验证函数")#这里可以加入验证代码, return fun#验证通过返回正确跳转页面,否则提示错误def page_account(): print("page_account")page_account=login(page_account)page_account()'''这里把page_account的函数地址传递给login。这样做点击page_account 页面时候会先调用login函数进行判断,#这样写太繁琐,而且修改原来代码''' #使用装饰器实现的代码 12345678def login(fun): print("这里是验证函数") #这里可以加入验证代码, return fun#验证通过返回正确跳转页面,否则提示错误@logindef page_account(): print("这里用的是装饰器写法,page_account")page_account()]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python迭代器]]></title>
     <url>%2Fpassages%2FPython%E8%BF%AD%E4%BB%A3%E5%99%A8%2F</url>
     <content type="text"><![CDATA[什么是迭代器？ 迭代是Python最强大的功能之一，是访问集合元素的一种方式。 迭代器是一个可以记住遍历的位置的对象。 迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。 迭代器有两个基本的方法：iter() 和 next()。 字符串，列表或元组对象都可用于创建迭代器 迭代器解决了什么问题？ 当读取一个特别文件时，如一个2G日志，假设硬盘IO每秒30M 使用文件的方式读取该文件需要大概一分钟，才能完全将该文件 加载到内存。 通常我们查看日志也就看最新的几行或者几百行。这样一来 打开速度慢。二来太浪费内存,如果文件超级大，可能会卡 迭代器很好的解决了这个问题。迭代器可以读取一行显示一行 如何定义迭代器，如下:123456789names=iter(['A','B','C','D']) #iter关键字生成迭代器#print(names[1]) #直接用索引访问会报错print(names.__next__()) #访问迭代器中的元素print(names.__next__()) #访问迭代器中的元素print(names.__next__()) #访问迭代器中的元素print(names.__next__()) #访问迭代器中的元素print(names.__next__()) #当迭代器中的元素以及访问完，最后会报StopIteration错误]]></content>

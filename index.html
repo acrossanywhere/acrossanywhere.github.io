@@ -174,6 +174,71 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Python装饰器原理/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="AcrossanyWhere">
+        <meta itemprop="description" content>
+        <meta itemprop="image" content="/images/avatar.png">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="生命不息梦想不止">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/passages/Python装饰器原理/" itemprop="url">Python装饰器原理</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-03-14T20:27:05+08:00">2019-03-14 20:27:05</time></span>
+        </span>
+        
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <ul>
+<li><p>什么是装饰器:</p>
+<pre><code>有了闭包函数的概念，我们再去理解装饰器会相对容易一些。python装饰器本质上就是一个函数，它可以让其他函数在不需要做任何代码变动的前提下增加额外的功能，装饰器的返回值也是一个函数对象（函数的指针）。装饰器函数的外部函数传入我要装饰的函数名字，返回经过修饰后函数的名字；内层函数（闭包）负责修饰被修饰函数。从上面这段描述中我们需要记住装饰器的几点属性，以便后面能更好的理解：
+</code></pre><p>  　　　　实质： 是一个函数</p>
+<p>  　　　　参数：是你要装饰的函数名（并非函数调用）</p>
+<p>  　　　　返回：是装饰完的函数名（也非函数调用）</p>
+<p>  　　　　作用：为已经存在的对象添加额外的功能</p>
+<p>  　　　　特点：不需要对对象做任何的代码上的变动</p>
+</li>
+</ul>
+<ul>
+<li><p>装饰器是用来干嘛的？</p>
+<pre><code>在调用一个函数前先调用两一个函数
+比如某电商网站，除了首页，点击其他页面都需要先登录
+才能查看，装饰器就可以在用户点击其他页面时调用登陆函数
+</code></pre></li>
+</ul>
+<p>#未使用装饰器版本的代码</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">login</span><span class="hljs-params">(fun)</span>:</span><br>    print(<span class="hljs-string">"这里是验证函数"</span>)<span class="hljs-comment">#这里可以加入验证代码,</span><br>    <span class="hljs-keyword">return</span> fun<span class="hljs-comment">#验证通过返回正确跳转页面,否则提示错误</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">page_account</span><span class="hljs-params">()</span>:</span><br>    print(<span class="hljs-string">"page_account"</span>)<br>page_account=login(page_account)<br>page_account()<br><span class="hljs-string">'''这里把page_account的函数地址传递给login。这样做点击page_account<br>    页面时候会先调用login函数进行判断,#这样写太繁琐,而且修改原来代码'''</span><br></code></pre></td></tr></table></figure>
+<p>#使用装饰器实现的代码</p>
+<figure class="hljs highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">login</span><span class="hljs-params">(fun)</span>:</span><br>    print(<span class="hljs-string">"这里是验证函数"</span>) <span class="hljs-comment">#这里可以加入验证代码,</span><br>    <span class="hljs-keyword">return</span> fun<span class="hljs-comment">#验证通过返回正确跳转页面,否则提示错误</span><br><span class="hljs-meta">@login</span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">page_account</span><span class="hljs-params">()</span>:</span><br>    print(<span class="hljs-string">"这里用的是装饰器写法,page_account"</span>)<br>page_account()<br></code></pre></td></tr></table></figure>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        <a class="post-tag button" href="/tags/python/" rel="tag"><i class="fas fa-tags"></i>python</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="http://yoursite.com/passages/Python迭代器/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="AcrossanyWhere">
@@ -622,7 +687,7 @@ exit[退出整个程序]
     
     <div class="archives-count count-block">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">5</a></div>
+      <div><a href="/archives/">6</a></div>
     </div>
     
     
